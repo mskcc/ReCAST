@@ -41,6 +41,7 @@ from ReCAST import ReCAST
 ### Fit in the training cohort
 
 Second, initialize the model. 
+
 *In the default settings, the model will contain n=100 base learners, each one trained on a bootstrapped cohort, and the regularization strenght of each model will apply an adaptive penalty to maximize the model sensitivity for rare/sparse yet meaningful predictors.*
 
 ```python
@@ -49,7 +50,9 @@ model = ReCAST()
 
 Third, fit the model. 
 You have to provide:
+
 i) the dataframe containig the variables (X1, X2, X3 etc), using variables columns, and patients as indexes. 
+
 ii) a dataframe containg the 'Time' variable and 'Event' variable. Please rename the columns to have these names
 
 ```python
@@ -81,7 +84,7 @@ model.define_3_risk_groups()
 model.define_2_risk_groups(plot=True)
 ```
 
-Before going to the test, you can get the risk-scores of your train set or get the risk-group assignment (before, run the function about above for defining the risk groups) for you training set in an easy way:
+Before going to the test, you can get the risk-scores of your train set or get the risk-group assignment (before, run the function above for defining the risk groups) for you training set in an easy way:
 
 ```python 
 #for risk scores
@@ -96,8 +99,9 @@ model.get_train_risk_groups_3()
 
 ### Prediction in independent samples
 
-Fourth, for **prediction** to independent samples, you can either get the continuous risk-scores, or the risk-class assignment (where ReCAST will use the previously defined cutoffs on the training set)
-*as the input, just provide the dataframe with the variabes of your test samples; no need to provide here the dataframe time-to-event of the test samples. ReCAST will authomatically consider just the variables included in your training samples*
+Fourth, for **prediction** to independent samples, you can either get the continuous risk-scores, or the risk-class assignment (where ReCAST will use the previously defined cutoffs on the training set). 
+
+*As input, just provide the dataframe with the variabes of your test samples; no need to provide here the dataframe time-to-event of the test samples. ReCAST will authomatically consider just the variables included in your training samples*
 
 ```python
 #for continuous risk-scores
@@ -107,7 +111,7 @@ model.predict(dataframe_variables_test)
 model.predict(dataframe_variables_test, classify=True, groups = 3) #or groups = 2 if you selected before 2 groups
 ```
 
-Any function above, starting from initialization, plotting etc has different possibile modifications, each described in detail in each function 
+Any function above, starting from initialization, plotting etc has different possibile modifications, each described in detail in each function you can query in the /ReCAST/code or directly in the notebook
 
 
 
