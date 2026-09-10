@@ -19,9 +19,9 @@ class ReCAST:
                  l1 = 1, 
                  val_size = 0.3, 
                  n_folds = 3, 
-                 bootstrap = False, 
+                 bootstrap = True, 
                  random_state = None, 
-                 adaptive_lasso = False, 
+                 adaptive_lasso = True, 
                  normalization = None, 
                  metric = 'c-index', 
                  auc_time_range=None, 
@@ -621,7 +621,7 @@ class ReCAST:
             return risk_scores_avg
     
     #plot selection frequency
-    def plot_selection_frequency(self, save=False, label_frequency=0.5, label_coef=0.01, label_coef_low = None, figsize=(10,8), exponentiate = False, despine = False):
+    def plot_selection_frequency(self, save=False, label_frequency=0.5, label_coef=0.01, label_coef_low = None, figsize=(6,5), exponentiate = False, despine = False):
         '''
         Plot selection frequency vs mean coefficient
         Args:
