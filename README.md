@@ -34,7 +34,7 @@ First, your notebook need to have access to the repository where you copied the 
 
 ```python 
 import sys
-sys.path.append('/path_to/ReCAST/code') #<--- replace 'path_to' with the path where you copied it. You can use realpath 'ReCAST' to help you
+sys.path.append('/path_to/ReCAST/code') 
 from ReCAST import ReCAST
 ```
 
@@ -111,7 +111,6 @@ model.predict(dataframe_variables_test)
 model.predict(dataframe_variables_test, classify=True, groups = 3) #or groups = 2 if you selected before 2 groups
 ```
 
-Any function above, starting from initialization, plotting etc has different possibile modifications, each described in detail in each function you can query in the /ReCAST/code or directly in the notebook
-
+All the functions above, starting from model initialization, plotting and so on have different possibile settings including additional functions not listed above for simplicity, each described in detail in /ReCAST/code
 
 
