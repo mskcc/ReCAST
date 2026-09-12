@@ -64,7 +64,7 @@ You can also easily see what is the Harrel's C-index for the training samples:
 ```python
 model.calculate_train_cindex(dataframe_timetoevent)
 ```
-*The model was designed to compute out-of-bag (if bootstrap=True) or out-of-fold (if bootstrap=False during model initialization) to make unbiased training risk scores, which we assumed is critical during early model development*
+*The model was designed to compute out-of-bag (if bootstrap=True) or out-of-fold (if bootstrap=False, defined at model initialization) risk predictions to avoid computing risk scores in samples directly included during base learners fine-tuning, which we assumed represents a critical step during early model development and later during cutoffs definition to maximize generalizibility to independent samples*
 
 And see the feature importance in a easy way:
 ```python
