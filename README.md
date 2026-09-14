@@ -111,6 +111,22 @@ model.predict(dataframe_variables_test)
 model.predict(dataframe_variables_test, classify=True, groups = 3) #or groups = 2 if you selected before 2 groups
 ```
 
+### Save and reload 
+
+To save the fitted model:
+
+```python
+model.save_model('desired_path/desired_model_name.pkl')
+```
+
+To reload the model with trained parameters:
+
+```python
+model = ReCAST.load_model('selected_path/selected_model_name.pkl')
+```
+
+
+### Additional documentation
 All the functions above, starting from model initialization, plotting and so on have different possibile settings including additional functions not listed above for simplicity, each described in detail in /ReCAST/code
 
 
