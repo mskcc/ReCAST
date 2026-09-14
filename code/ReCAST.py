@@ -239,7 +239,7 @@ class ReCAST:
 
     def fit(self, X, y):
         if self.verbose:
-            print(f"Fitting {self.n_models} CoxNet Models...")        
+            print(f"Fitting {self.n_models} base learners...")        
         if 'Event' not in y.columns or 'Time' not in y.columns:
             raise ValueError("y must have columns 'Event' and 'Time'")
         if y.isnull().values.any():
